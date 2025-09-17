@@ -1,0 +1,123 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Top Navbar */
+.top-navbar {
+    background: linear-gradient(90deg, #66bb6a, #fff176, #ef5350);
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.top-navbar a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+/* Side Images */
+.side-image {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.container {
+    width: 58%;
+    background: linear-gradient(90deg, #e8f5e9, #fffde7, #ffebee);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    color: #0d47a1;
+}
+
+.container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.container ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.container li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #43a047;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+/* Bottom Navbar */
+.bottom-navbar {
+    background-color: #0d47a1;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .side-image,
+    .container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}

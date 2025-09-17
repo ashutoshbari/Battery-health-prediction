@@ -1,0 +1,218 @@
+/* ✅ General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #e1bee7); /* Default */
+    margin: 0;
+    padding: 30px;
+    animation: fadeInBody 1s ease-in;
+    transition: background 0.5s ease-in-out;
+}
+
+/* 🔋 Silent Dynamic Backgrounds Based on Battery Health */
+body.low-battery {
+    background: linear-gradient(to right, #ffe5e9, #fbc3c8); /* Soft red tones */
+}
+
+body.medium-battery {
+    background: linear-gradient(to right, #fff8e1, #ffecb3); /* Soft yellow tones */
+}
+
+body.high-battery {
+    background: linear-gradient(to right, #e0f2f1, #c8e6c9); /* Soft green tones */
+}
+
+body.flash-low {
+    animation: gentleFlashRed 2s ease-in-out;
+}
+
+body.flash-high {
+    animation: gentleFlashGreen 2s ease-in-out;
+}
+
+@keyframes gentleFlashRed {
+    0%, 100% { background-color: #ffeaea; }
+    50% { background-color: #ffcccc; }
+}
+
+@keyframes gentleFlashGreen {
+    0%, 100% { background-color: #e0f7fa; }
+    50% { background-color: #c8facc; }
+}
+
+/* 🔝 Top Navbar */
+.top-navbar {
+    background-color: #4a148c;
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.top-navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.top-navbar a:hover {
+    color: #ffccff;
+}
+
+/* 🔻 Bottom Navbar */
+.bottom-navbar {
+    background-color: #ede7f6;
+    color: #4a148c;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+/* 📦 Form Container */
+.container {
+    background-color: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.8s ease;
+}
+
+/* ✨ Titles and Headings */
+h1, h2, h3 {
+    text-align: center;
+    color: #4a148c;
+    animation: popText 0.6s ease;
+}
+
+@keyframes popText {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 📋 Form Elements */
+form label {
+    margin-top: 15px;
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #7b1fa2;
+    box-shadow: 0 0 8px rgba(123, 31, 162, 0.4);
+}
+
+/* 🔘 Button Styling */
+button {
+    background: linear-gradient(to right, #7b1fa2, #512da8);
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #512da8, #7b1fa2);
+    transform: scale(1.05);
+}
+
+/* 📊 Battery Health Bar */
+.bar-container {
+    background-color: #ddd;
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.6s ease;
+    background-image: linear-gradient(to right, #00c853, #b2ff59); /* Default green */
+}
+
+.bar.green {
+    background-image: linear-gradient(to right, #00e676, #69f0ae);
+}
+
+.bar.orange {
+    background-image: linear-gradient(to right, #ff9800, #ffc107);
+}
+
+.bar.red {
+    background-image: linear-gradient(to right, #f44336, #e57373);
+}
+
+/* 💬 Status Message */
+.status {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #4a148c;
+    animation: pulseText 1.5s infinite;
+}
+
+@keyframes pulseText {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 📜 Input Summary List */
+.result ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    animation: fadeInList 0.8s ease;
+}
+
+@keyframes fadeInList {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result ul li {
+    background-color: #f3e5f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 🔁 Page Animations */
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

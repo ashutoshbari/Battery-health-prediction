@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battery Health Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<!-- ✅ Add dynamic battery class to change background color -->
+<body class="{{ battery_class }}">
+
+    <!-- 🔝 Top Navbar -->
+    <div class="top-navbar">
+        <div><strong>🔋 Battery Health Predictor</strong></div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/predict">Prediction</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- 🔋 Title Section -->
+    <div class="title-section">
+        <h1>🔋 Battery Health Predictor</h1>
+    </div>
+
+    <!-- 📋 Form Container -->
+    <div class="container">
+        <form method="POST">
+
+            <label for="device_type">Device Type:</label>
+            <select name="device_type" id="device_type" required>
+                <option value="Smartphone">Smartphone</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="battery_capacity">Battery Capacity (mAh):</label>
+            <input type="number" name="battery_capacity" id="battery_capacity" min="500" max="10000" value="4000" required>
+
+            <label for="charge_cycles">Charge Cycles:</label>
+            <input type="number" name="charge_cycles" id="charge_cycles" min="0" max="2000" value="500" required>
+
+            <label for="avg_temp">Avg. Temperature (°C):</label>
+            <input type="range" name="avg_temp" id="avg_temp" min="0" max="60" step="0.1" value="30" oninput="this.nextElementSibling.value = this.value"required>
+            <output>30</output>
+
+            <label for="charge_time">Avg. Charge Time (hrs):</label>
+            <input type="range" name="charge_time" id="charge_time" min="0" max="12" step="0.1" value="2.5" oninput="this.nextElementSibling.value = this.value"required>
+            <output>2.5</output>
+
+            <label>Fast Charging Supported?</label>
+            <input type="radio" name="fast_charging" value="Yes" checked> Yes
+            <input type="radio" name="fast_charging" value="No"> No
+
+            <label for="screen_on_time">Screen On Time (hrs):</label>
+            <input type="range" name="screen_on_time" id="screen_on_time" min="0" max="15" step="0.1" value="6" oninput="this.nextElementSibling.value = this.value"required>
+            <output>6</output>
+
+            <label for="age_months">Device Age (months):</label>
+            <input type="number" name="age_months" id="age_months" min="1" max="60" value="12" required>
+
+            <button type="submit">🚀 Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            <h2>🎯 Estimated Battery Health: <span>{{ prediction | round(2) }}%</span></h2>
+
+            <!-- ✅ Progress bar that fills according to prediction and color -->
+        
+            </div>
+
+            <!-- ✅ Status message -->
+            <p class="status">{{ status_msg }}</p>
+
+            <!-- ✅ Input Summary -->
+            <h3>📋 Input Summary</h3>
+            <ul>
+                {% for key, value in input_summary.items() %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- 🔻 Bottom Navbar -->
+    <div class="bottom-navbar">
+        © 2025 Battery Health Predictor | Built By Ashutosh Bari
+    </div>
+
+</body>
+</html>

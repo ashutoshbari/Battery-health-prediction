@@ -1,0 +1,105 @@
+/* ===== Global Page Styling ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Soft Multi-Color Gradient Background */
+    background: linear-gradient(to bottom right,
+        rgba(255, 255, 204, 0.8),   /* soft yellow */
+        rgba(255, 204, 229, 0.8),   /* light pink */
+        rgba(204, 229, 255, 0.8),   /* light blue */
+        rgba(230, 255, 230, 0.8)    /* light green */
+    );
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* ===== Top Navigation Bar ===== */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* vibrant modern gradient */
+    padding: 12px 24px;
+    color: white;
+    font-size: 20px;
+}
+
+.top-navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.top-navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Main Wrapper ===== */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ===== Contact Info Container ===== */
+.container {
+    background: rgba(255, 255, 255, 0.9);  /* subtle transparency */
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 720px;
+    width: 100%;
+    line-height: 1.7;
+    transition: 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.container h1 {
+    color: #d63384;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.container p {
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.container strong {
+    font-weight: 600;
+}
+
+/* ===== Link Styling ===== */
+a {
+    color: #c2185b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Embedded Google Map ===== */
+iframe {
+    border: 0;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+
+/* ===== Bottom Footer Bar ===== */
+.bottom-navbar {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+    font-size: 14px;
+}

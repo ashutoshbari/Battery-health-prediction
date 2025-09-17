@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battery Health App - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body class="{{ battery_status_class }}">
+
+    <!-- 🔝 Top Navbar -->
+    <div class="top-navbar">
+        <div><strong>🔋 Battery Health App</strong></div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- 🧾 Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Left Image Section -->
+        <div class="side-image">
+            <img src="{{ url_for('static', filename='Battery_health_prediction.png') }}" alt="Battery Image Left">
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+            <h1>Welcome to the Battery Health Predictor</h1>
+            <p>This tool helps you estimate your device's battery health using smart inputs like:</p>
+            <ul>
+                <li>🔋 Battery Capacity & Charge Cycles</li>
+                <li>🌡️ Temperature & Charge Time</li>
+                <li>⚡ Fast Charging & Screen Time</li>
+                <li>📱 Device Age & Type</li>
+            </ul>
+            <p>Ready to find out how healthy your battery is?</p>
+            <a href="/predict">
+                <button>🚀 Start Prediction</button>
+            </a>
+
+            <hr style="margin: 30px 0;">
+
+            <h2 style="color: #4a148c;">📚 About Battery Health</h2>
+            <p>Battery health refers to how well your device's battery can hold and deliver charge compared to when it was new.
+            Over time, lithium-ion batteries naturally degrade due to factors like usage, heat, charge cycles, and charging habits.</p>
+
+            <h3 style="color: #6a1b9a;">💡 Good Practices to Maintain Battery Health:</h3>
+            <ul>
+                <li>✅ Avoid charging to 100% or draining to 0% frequently.</li>
+                <li>✅ Keep your device in moderate temperatures (ideally 20–30°C).</li>
+                <li>✅ Use original or certified chargers to avoid voltage spikes.</li>
+                <li>✅ Unplug once fully charged to prevent overcharging stress.</li>
+                <li>✅ Avoid heavy multitasking while charging (heating impact).</li>
+            </ul>
+
+            <p>Monitoring your battery's health regularly helps prolong its lifespan and ensures your device runs efficiently.
+            Our app helps you track these parameters and gives an estimate based on real-world usage factors.</p>
+        </div>
+
+        <!-- Right Image Section -->
+        <div class="side-image">
+            <img src="{{ url_for('static', filename='Battery-Wireless_phone_charger.jpg') }}" alt="Battery Image Right">
+        </div>
+    </div>
+
+    <!-- 🔻 Bottom Navbar -->
+    <div class="bottom-navbar">
+        © 2025 Battery Health Predictor | Built by Ashutosh Bari
+    </div>
+
+</body>
+</html>
